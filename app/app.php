@@ -18,6 +18,14 @@
 		return $app['twig']->render("bases.twig.html");
 	});
 	
+	$app->get("/romanizer", function() use ($app){
+		return $app['twig']->render("romanize.twig.html");
+	});
+	
+	$app->get("/piggify", function() use ($app){
+		return $app['twig']->render("pig_latin.twig.html");
+	});
+	
 	
 	return $app;
 ?>

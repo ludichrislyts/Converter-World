@@ -5,26 +5,25 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js"></script>
 
-  <title>Romanizer</title>
+  <title>Pig Latin Converter</title>
   </head>
   <body>
     <div class="container">
-      <h1>Enter a number and find the Roman numeral representation:</h1>
-      <h3>(The Romans couldn't count beyond 3,999, just fyi)</h3>
+      <h1>Enter your word to be converted to pig latin:</h1>
 
-      <form id="romanize">
+      <form id="pigLatinConvert">
         <div class="form-group">
-          <label for="romanize">Enter the number:</label>
-          <input class="form-control" type="number" id="num" min="0" max="3999">
+          <label for="phrase">Enter your phrase to convert</label>
+          <input class="form-control" type="text" name="phrase" id="phrase">
         </div>
         <button type="submit" class="btn">Submit</button>
         <input type="reset" class="btn" value="Reset" onClick="window.location.reload()">
       </form>
 
-      <div id="result">
-        <p>Here is the roman number for <span class="num"></span>: <br></br> <span class="roman"></span></p>
+      <div class="pig_latin">
+        <p>Your word: <span class="pig_latin_words"></span><span class="result"></span></p>
       </div>
-      <a href="/" class="btn">HOME</a>
+      <a href="/" class="btn">HOME</a>	  
     </div>
   </body>
 </html>
