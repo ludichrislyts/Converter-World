@@ -1,0 +1,27 @@
+<html>
+  <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/scripts.js"></script>
+
+  <title>Romanizer</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Enter a number and find the Roman numeral representation:</h1>
+
+      <form id="romanize">
+        <div class="form-group">
+          <label for="romanize">Enter the number:</label>
+          <input class="form-control" type="number" id="num">
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+
+      <div id="result">
+        <p>Here is the roman number for <span class="num"></span>: <br></br> <span class="roman"></span></p>
+      </div>
+    </div>
+  </body>
+</html>
