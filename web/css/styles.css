@@ -21,6 +21,9 @@ body {background: #F0F0F0;}
 #result{
 	display: none;
 }
+#bad-result{
+  display: none;
+}
 
 textarea {
   margin-top: 10px;

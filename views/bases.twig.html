@@ -4,8 +4,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js"></script>
+  <style>
+    li {color: black;
+    font-style: italic;}
+  </style>
 
-  <title>Converter</title>
+  <title>Number Base Converterr</title>
   </head>
   <body>
     <div class="container">
@@ -13,8 +17,6 @@
 
       <form id="num_converter">
         <div class="form-group">
-          <label for="num_converter">Enter the number:</label>
-          <input class="form-control" type="text" id="num_string">
           <label for="num_converter">Enter the base</label>
           <select id="base">
             <option value="2">Binary</option>
@@ -25,10 +27,24 @@
             <option value="8">Octal</option>
             <option value="16">Hexadecimal</option>
           </select>
+          <label for="num_converter">Enter the number:</label>
+          <input class="form-control" type="text" id="num_string">
         </div>
         <button type="submit" class="btn">Submit</button>
-        <input type="reset" class="btn" value="Reset" onClick="window.location.reload()">
+        <input id="reset" type="reset" value="Clear Field" class="btn" onClick="#num_converter.reload()">
       </form>
+      <div id="bad-result">
+        <p style="color:red; font-weight:bold">Bad entry! Here are the input guidlines:<br></br></p>
+        <ul>
+          <li>Binary: numbers between 0 and 1.</li>
+          <li>Ternary: numbers between 0 and 2.</li>
+          <li>Quaternary: numbers between 0 and 3. (See where this is going?)</li>
+          <li>Quinary: numbers between 0 and 4.</li>
+          <li>Seinary: numbers between 0 and 5.</li>
+          <li>Octal: numbers between 0 and 7.</li>
+          <li>Hexadecimal: numbers between 0 and 9, and/or letters A - Z. (case inSeNsiTIve)</li>
+        </ul>      
+      </div>
       <div id="result">
         <p>Here is the decimal:<br></br><span class="decimal"></span></p>
       </div>

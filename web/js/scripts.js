@@ -8,25 +8,59 @@ var findAndReplace = function(phrase, word, replace){
 }
 // NUMBER BASE CONVERRTR
 var converter = function(raw, base){
-  var decimal = 0;
-  var value = 1;
-  var hex = {
+//make regex checks for valid entries
+  var binreg = new RegExp('[^01]+$');
+  var trireg = new RegExp('[^012]+$');
+  var quadreg = new RegExp('[^0123]+$');
+  var quinreg = new RegExp('[^01234]+$');
+  var senreg = new RegExp('[^012345]+$');
+  var octreg = new RegExp('[^01234567]+$');
+  var hexreg = new RegExp('[^a-fA-F0123456789]+$');
+//error message to display if bad input
+  var message = "Invalid input for the base. Try again.";
+// check base for proper comparisons
+  switch(base){
+    case 2:
+      var badBin = raw.match(binreg);
+      if (badBin) {return 0;}
+    case 3:
+      var badTri = raw.match(trireg);
+      if (badTri) {return 0;}
+    case 4:
+      var badquad = raw.match(quadreg);
+      if (badquad) {return 0;}
+    case 5:
+      var badquin = raw.match(quinreg);
+      if (badquin) {return 0;}
+    case 6:
+      var badsen = raw.match(senreg);
+      if (badsen) {return 0;}
+    case 8:
+      var badoct = raw.match(octreg);
+      if (badoct) {return 0;}
+    case 16:
+      var badhex = raw.match(hexreg);
+      if (badhex) {return 0;}
+  }
+ // assume valid input 
+    var decimal = 0;
+    var value = 1;
+    var hex = {
     "a":10,
     "b":11,
     "c":12,
     "d":13,
     "e":14,
-    "f":15
-  };
-  for(var i = raw.length - 1; i >= 0; i--) {
-    if(raw[i] in hex){
-      decimal += (hex[raw[i]] * value);
-    } else{
-      decimal += (raw[i] * value);
+    "f":15};
+    for(var i = raw.length - 1; i >= 0; i--) {
+      if(raw[i] in hex){
+        decimal += (hex[raw[i]] * value);
+      } else{
+        decimal += (raw[i] * value);
+      }
+      value *= base;
     }
-    value *= base;
-  }
-  return decimal;
+    return decimal;
 }
 // PIGGIFY
 function pigLatinConvert(phrase) {
@@ -154,14 +188,21 @@ $(document).ready(function(){
 });
 
 // BASE NUMBER CONVERRTR
-$(document).ready(function(){
+$(document).ready(function(){  
   $("form#num_converter").submit(function(event){
-    var num_string = ($("input#num_string").val());
+    $("#bad-result").hide();
+    $("#result").hide();
     var base = parseInt($("select#base").val());
-    var result = converter(num_string, base);
-    $(".decimal").text(result);
-    $("#result").show();
-    event.preventDefault();
+    var num_string = ($("input#num_string").val());
+    var true_result = converter(num_string, base);
+    if (true_result === 0){
+      $("#bad-result").show();
+    }
+    else{
+      $(".decimal").text(true_result);
+      $("#result").show();
+    }
+      event.preventDefault();
   });
 });
 // PIGGIFY
