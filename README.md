@@ -1,21 +1,26 @@
-# Word Replayssr
+# Converter World
 
-##### Searches a phrase for a word and replaces it with another word. Sept. 11, 2015
+##### Combines the last few conversion exercises from my Epicodus classes. Sept. 11, 2015
 
 #### Chris Lytsell
 
 ## Description
-A handy little program that takes a phrase, a word, and a replacement word from a user and finds and replaces all occurrences of the word with the replacement word.
-
+A handy little website containing these amazing things:
+* Word Replayssr: that takes a phrase, a word, and a replacement word from a user and finds and replaces all occurrences of the word with the replacement word.
+* Piggify: Translate a word or phrase to Pig-Latin
+* Romanizer: Take a decimal number and output the Roman Numeral equivilant
+* Base Jumpr: Take an input number of various bases (Binary, Trinary, Hex, etc,) and output the decimal equivilant
 
 ## Setup
 * Clone the project using the link provided on Github.
-* Open "find_and_replace.html" from the main project folder in a web browser
-* Have fun replacing words in crazy ways!
+* on the command line, run _composer install_ from the main project folder
+* from the web folder, type _php -S localhost:8000_
+* go to localhost:8000 in your web browser
+* Have fun replacing and converting stuff!
 
 ## Technologies Used
 
-Javascript, Mocha, Chai, jQuery, HTML
+Javascript, Mocha, Chai, jQuery, HTML, PHP, Twig, Silex
 
 ### Legal
 
